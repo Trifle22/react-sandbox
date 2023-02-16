@@ -1,10 +1,22 @@
+import ConfigProvider from 'antd/es/config-provider';
+import theme from 'antd/es/theme';
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import './app.css'
+import {Layout} from './Layout';
 function App() {
   return (
-    <div className='root'>
-      <p className='paragraph'>This is the react sandbox, enjoy!</p>
-    </div>
+    <ConfigProvider
+      theme={{
+        algorithm: theme.darkAlgorithm,
+      }}
+    >
+      <div className='root'>
+        <BrowserRouter>
+          <Layout />
+        </BrowserRouter>
+      </div>      
+    </ConfigProvider>
   );
 }
 
