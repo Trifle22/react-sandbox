@@ -1,2 +1,2 @@
-export { Trash} from './Trash';
+export { DragnDrop } from './DragnDrop';
 export { Home } from './Home';

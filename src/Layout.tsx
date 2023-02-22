@@ -13,7 +13,7 @@ export const Layout = () => {
   } = theme.useToken();
 
   return (
-    <AntLayout style={{ height: '100%' }}>
+    <AntLayout style={{ height: '100vh' }}>
       <Header className="header">
         <div className='logo'>
           <Avatar />
@@ -32,9 +32,9 @@ export const Layout = () => {
                 <span>Домашняя</span>
                 <Link to='/' />
               </Menu.Item>
-              <Menu.Item key='/trash'>
+              <Menu.Item key='/dragndrop'>
                 <DeleteOutlined />
-                <span>Урна</span>
+                <span>DragnDrop test</span>
                 <Link to='/trash' />
               </Menu.Item>
             </Menu>
@@ -42,9 +42,8 @@ export const Layout = () => {
         <AntLayout style={{ padding: '0 12px 12px' }}>
           <Content
             style={{
-              padding: 24,
+              padding: 12,
               margin: 0,
-              minHeight: 280,
               background: colorBgContainer,
             }}
           >

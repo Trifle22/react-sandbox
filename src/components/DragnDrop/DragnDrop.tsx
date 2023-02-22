@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-export const Trash = () => {
+export const DragnDrop = () => {
   return (
     <div>
-      Урна
+      dnd
     </div>
   )
 }
