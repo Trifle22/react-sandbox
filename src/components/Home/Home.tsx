@@ -1,10 +1,6 @@
 import * as React from 'react';
-import './styles.css'
+import './styles.css';
 
 export const Home = () => {
-  return (
-    <div className='root'>
-      Домашняя
-    </div>
-  )
-}
+	return <div className="root">Домашняя</div>;
+};
