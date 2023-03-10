@@ -3,7 +3,7 @@ import { Layout as AntLayout, Menu, theme } from 'antd';
 import { Link } from 'react-router-dom';
 import { DeleteOutlined, HomeOutlined } from '@ant-design/icons';
 import { Avatar } from './Avatar';
-import { AppRouter } from './router/AppRouter';
+import { AppRouter } from 'router/AppRouter';
 
 const { Header, Content, Sider } = AntLayout;
 

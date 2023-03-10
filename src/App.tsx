@@ -2,7 +2,7 @@ import ConfigProvider from 'antd/es/config-provider';
 import theme from 'antd/es/theme';
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { Layout } from './Layout';
+import { Layout } from './components/Layout/Layout';
 export const App = () => {
 	return (
 		<ConfigProvider
