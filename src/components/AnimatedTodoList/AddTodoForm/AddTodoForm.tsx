@@ -3,6 +3,7 @@ import { useTodosContext } from 'hooks';
 import './styles.css';
 import { Button, Input } from 'antd';
 import { ChangeEvent, useState } from 'react';
+import { sendNotification } from 'helpers/sendNotification';
 
 interface IAddTodoProps {
 	addTodo: (title: string) => void;
@@ -14,7 +15,7 @@ export const AddTodoForm = ({ addTodo }: IAddTodoProps) => {
 	const handleAddTodo = (event: React.FormEvent) => {
 		event.preventDefault();
 		if (todoTitle.trim() === '') {
-			alert('Название задачи не может быть пустым');
+			sendNotification({ type: 'error', title: 'Название задачи не может быть пустым' });
 			return;
 		}
 		addTodo(todoTitle);
