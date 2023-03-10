@@ -1,21 +1,20 @@
-import { useDroppable } from '@dnd-kit/core';
 import * as React from 'react';
 import { ITodo, ITodoListProps } from 'types/todos';
 import { EmptyListMesage } from '../common/EmptyListMesage';
-import { Todo } from '../Todo/Todo';
+import { Todo } from '../Todo';
 import './styles.css';
 
 export const TodoList = ({ todos, deleteTodo, toggleTodoComplete }: ITodoListProps) => {
 	let content: React.ReactNode;
 
-	const { setNodeRef } = useDroppable({ id: 'droppable' });
+	const notCompletedTodos = todos.filter((todo) => !todo.completed);
 
-	if (todos.length === 0) {
+	if (notCompletedTodos.length === 0) {
 		content = <EmptyListMesage text="Список задач пуст" />;
 	} else {
 		content = (
 			<>
-				{todos.map((todo: ITodo) => {
+				{notCompletedTodos.map((todo: ITodo) => {
 					return (
 						<Todo
 							todo={todo}
@@ -28,9 +27,5 @@ export const TodoList = ({ todos, deleteTodo, toggleTodoComplete }: ITodoListPro
 			</>
 		);
 	}
-	return (
-		<div className="list" ref={setNodeRef}>
-			{content}
-		</div>
-	);
+	return <div className="list">{content}</div>;
 };

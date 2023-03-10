@@ -4,7 +4,7 @@ import { AddTodoForm } from './AddTodoForm';
 import './styles.css';
 import { TodoLists } from './TodoLists';
 
-export const DragnDrop = () => {
+export const AnimatedTodoList = () => {
 	const { todos, addTodo, deleteTodo, toggleTodoComplete } = useTodosContext();
 
 	return (

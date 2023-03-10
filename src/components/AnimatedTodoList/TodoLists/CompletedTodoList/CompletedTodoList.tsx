@@ -1,14 +1,11 @@
-import { useDroppable } from '@dnd-kit/core';
 import * as React from 'react';
 import { ITodo, ITodoListProps } from 'types/todos';
 import { EmptyListMesage } from '../common/EmptyListMesage';
-import { Todo } from '../Todo/Todo';
+import { Todo } from '../Todo';
 import './styles.css';
 
 export const CompletedTodoList = ({ todos, deleteTodo, toggleTodoComplete }: ITodoListProps) => {
 	const completedTodos = todos.filter((todo) => todo.completed);
-
-	const { setNodeRef } = useDroppable({ id: 'droppable' });
 
 	let content: React.ReactNode;
 
@@ -31,9 +28,5 @@ export const CompletedTodoList = ({ todos, deleteTodo, toggleTodoComplete }: ITo
 		);
 	}
 
-	return (
-		<div className="completed-list" ref={setNodeRef}>
-			{content}
-		</div>
-	);
+	return <div className="completed-list">{content}</div>;
 };

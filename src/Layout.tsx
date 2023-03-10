@@ -32,10 +32,10 @@ export function Layout() {
 							<span>Домашняя</span>
 							<Link to="/" />
 						</Menu.Item>
-						<Menu.Item key="/dragndrop">
+						<Menu.Item key="/animatedTodoList">
 							<DeleteOutlined />
-							<span>DragnDrop test</span>
-							<Link to="/trash" />
+							<span>AnimatedTodoList</span>
+							<Link to="/animatedTodoList" />
 						</Menu.Item>
 					</Menu>
 				</Sider>
