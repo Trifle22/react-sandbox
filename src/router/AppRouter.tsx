@@ -9,7 +9,7 @@ export const AppRouter = () => {
 		<Routes>
 			<Route path="/" element={<Home />} index />
 			<Route path="/animatedTodoList" element={<AnimatedTodoList />} />
-			<Route path="/realTimeeWeather" element={<RealTimeWeather />} />
+			<Route path="/weather" element={<RealTimeWeather />} />
 		</Routes>
 	);
 };

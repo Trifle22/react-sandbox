@@ -1,11 +1,11 @@
 import React from 'react';
-import { Layout as AntLayout, Menu, theme } from 'antd';
-import { Link } from 'react-router-dom';
-import { DeleteOutlined, HomeOutlined } from '@ant-design/icons';
+import { Layout as AntLayout, theme } from 'antd';
+
 import { Avatar } from './Avatar';
 import { AppRouter } from 'router/AppRouter';
+import { Menu } from './Menu';
 
-const { Header, Content, Sider } = AntLayout;
+const { Header, Content } = AntLayout;
 
 export function Layout() {
 	const {
@@ -20,25 +20,7 @@ export function Layout() {
 				</div>
 			</Header>
 			<AntLayout>
-				<Sider width={200} style={{ background: colorBgContainer }}>
-					<Menu
-						mode="inline"
-						defaultSelectedKeys={['1']}
-						defaultOpenKeys={['sub1']}
-						style={{ height: '100%', borderRight: 0 }}
-					>
-						<Menu.Item key="/">
-							<HomeOutlined />
-							<span>Домашняя</span>
-							<Link to="/" />
-						</Menu.Item>
-						<Menu.Item key="/animatedTodoList">
-							<DeleteOutlined />
-							<span>AnimatedTodoList</span>
-							<Link to="/animatedTodoList" />
-						</Menu.Item>
-					</Menu>
-				</Sider>
+				<Menu />
 				<AntLayout style={{ padding: '0 12px 12px' }}>
 					<Content
 						style={{
