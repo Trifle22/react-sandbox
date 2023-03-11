@@ -4,6 +4,7 @@ import { Button, Checkbox } from 'antd';
 import { Transition } from 'react-transition-group';
 import './style.css';
 import { useEffect, useRef, useState } from 'react';
+import { StylesType } from 'types/styles';
 
 interface ITodoProps {
 	todo: ITodo;
@@ -13,11 +14,10 @@ interface ITodoProps {
 export const Todo = ({ todo, deleteTodo, toggleTodoComplete }: ITodoProps) => {
 	const [inProp, setInProp] = useState(false);
 	const nodeRef = useRef(null);
+
 	useEffect(() => {
 		setInProp(true);
 	}, []);
-
-	type StylesType = Record<string, React.CSSProperties>;
 
 	const defaultStyles = {
 		display: 'flex',
@@ -47,8 +47,6 @@ export const Todo = ({ todo, deleteTodo, toggleTodoComplete }: ITodoProps) => {
 	return (
 		<Transition nodeRef={nodeRef} in={inProp} timeout={500}>
 			{(state) => {
-				console.log(state);
-
 				return (
 					<div style={{ ...defaultStyles, ...transitionStyles[state] }}>
 						<span>{todo.title}</span>

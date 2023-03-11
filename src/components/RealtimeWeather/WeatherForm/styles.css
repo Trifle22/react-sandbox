@@ -1,0 +1,10 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+.city-select {
+  width: 300px
+}
