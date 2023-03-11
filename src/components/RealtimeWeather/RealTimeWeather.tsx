@@ -10,7 +10,7 @@ export const RealTimeWeather = () => {
 
 	return (
 		<div className="container">
-			<WeatherForm setData={setData} setIsLoading={setIsLoading} />
+			<WeatherForm setData={setData} setIsLoading={setIsLoading} isLoading={isLoading} />
 			<WeatherOutput weatherData={data} isLoading={isLoading} />
 		</div>
 	);

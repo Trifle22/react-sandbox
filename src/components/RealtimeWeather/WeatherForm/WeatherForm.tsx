@@ -1,5 +1,4 @@
 import { Button, Select } from 'antd';
-import useSWR from 'swr';
 import { cities } from 'const/cities';
 import { sendNotification } from 'helpers/sendNotification';
 import React, { useCallback, useState } from 'react';
@@ -10,21 +9,17 @@ import { weatherFetcher } from 'fetchers/weatherFetcher';
 interface IWeatherFormProps {
 	setIsLoading: (value: boolean) => void;
 	setData: (value: any) => void;
+	isLoading: boolean;
 }
 
-export const WeatherForm = ({ setIsLoading, setData }: IWeatherFormProps) => {
+export const WeatherForm = ({ setIsLoading, setData, isLoading }: IWeatherFormProps) => {
 	const [city, setCity] = useState('');
-	const [shouldFetch, setShouldFetch] = useState<boolean>(false);
 
 	const handleSelectorChange = (value: string) => {
 		setCity(value);
 	};
 
-	const { data, isLoading } = useSWR(shouldFetch ? buildWeatherURL(city) : null, weatherFetcher, {
-		refreshInterval: 1000,
-	});
-
-	const loadWeatherByCity = (event: React.FormEvent) => {
+	const loadWeatherByCity = async (event: React.FormEvent) => {
 		event.preventDefault();
 
 		if (!city) {
@@ -34,8 +29,13 @@ export const WeatherForm = ({ setIsLoading, setData }: IWeatherFormProps) => {
 			});
 			return;
 		}
-		setShouldFetch(true);
-		setIsLoading(isLoading);
+		setIsLoading(true);
+
+		const url = buildWeatherURL(city);
+
+		const data = await weatherFetcher(url);
+
+		setIsLoading(false);
 		setData(data);
 	};
 
