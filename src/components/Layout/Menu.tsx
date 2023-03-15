@@ -2,7 +2,13 @@ import * as React from 'react';
 import { Menu as AntdMenu, theme, Layout as AntLayout } from 'antd';
 
 import { Link } from 'react-router-dom';
-import { AntCloudOutlined, BuildOutlined, DeleteOutlined, HomeOutlined } from '@ant-design/icons';
+import {
+	AntCloudOutlined,
+	BuildOutlined,
+	DeleteOutlined,
+	HomeOutlined,
+	VideoCameraAddOutlined,
+} from '@ant-design/icons';
 
 const { Sider } = AntLayout;
 
@@ -33,6 +39,11 @@ export const Menu = () => {
 					<AntCloudOutlined />
 					<span>Погода</span>
 					<Link to="/weather" />
+				</AntdMenu.Item>
+				<AntdMenu.Item key="/films">
+					<VideoCameraAddOutlined />
+					<span>Фильмы</span>
+					<Link to="/films" />
 				</AntdMenu.Item>
 			</AntdMenu>
 		</Sider>

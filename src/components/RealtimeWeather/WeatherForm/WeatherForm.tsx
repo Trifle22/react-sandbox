@@ -4,7 +4,7 @@ import { sendNotification } from 'helpers/sendNotification';
 import React, { useCallback, useState } from 'react';
 import './styles.css';
 import { buildWeatherURL } from 'helpers/buildWeatherURL';
-import { weatherFetcher } from 'fetchers/weatherFetcher';
+import { baseFetcher } from 'fetchers/baseFetcher';
 
 interface IWeatherFormProps {
 	setIsLoading: (value: boolean) => void;
@@ -33,7 +33,7 @@ export const WeatherForm = ({ setIsLoading, setData, isLoading }: IWeatherFormPr
 
 		const url = buildWeatherURL(city);
 
-		const data = await weatherFetcher(url);
+		const data = await baseFetcher(url);
 
 		setIsLoading(false);
 		setData(data);
