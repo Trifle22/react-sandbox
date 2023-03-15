@@ -34,11 +34,6 @@ export const Menu = () => {
 					<span>Погода</span>
 					<Link to="/weather" />
 				</AntdMenu.Item>
-				<AntdMenu.Item key="/parallax">
-					<BuildOutlined />
-					<span>Parallax</span>
-					<Link to="/parallax" />
-				</AntdMenu.Item>
 			</AntdMenu>
 		</Sider>
 	);
