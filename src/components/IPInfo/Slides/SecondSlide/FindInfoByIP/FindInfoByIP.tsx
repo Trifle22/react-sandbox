@@ -1,11 +1,12 @@
 import { Button, Input, Spin } from 'antd';
 import { log } from 'console';
+import { CoordsByIPContext } from 'context/CoordsByIP';
 import { baseFetcher } from 'fetchers/baseFetcher';
 import { buildInfoByIPURL } from 'helpers/buildInfoByIPURL';
 import { handleCopyToClipboard } from 'helpers/handleCopyToClipboard';
 import { sendNotification } from 'helpers/sendNotification';
 import * as React from 'react';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { InfoOutput } from './InfoOutput';
 import './styles.css';
 
@@ -13,6 +14,7 @@ export const FindInfoByIP = () => {
 	const [isLoading, setIsLoading] = useState(false);
 	const [info, setInfo] = useState<any>();
 	const [IP, setIP] = useState('');
+	const { setCoords } = useContext(CoordsByIPContext);
 
 	const handleSetIP = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const value = event.target.value;
@@ -24,6 +26,7 @@ export const FindInfoByIP = () => {
 		const response = await baseFetcher(buildInfoByIPURL(IP));
 		if (response) {
 			setInfo(response);
+			setCoords(response.loc as string);
 		} else {
 			sendNotification({
 				type: 'error',
