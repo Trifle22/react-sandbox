@@ -1,0 +1,27 @@
+.findInfoContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.infoOutput {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  border-bottom: solid 1px #ccc;
+  border-radius: 10px;
+  transition: all 0.5s ease-in-out;
+}
+
+.infoOutput:hover {
+  border-color: #001529;
+}
+
+.infoOutput p {
+  margin: 0
+}

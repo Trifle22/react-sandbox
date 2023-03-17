@@ -4,7 +4,7 @@ import { Button, Checkbox } from 'antd';
 import { Transition } from 'react-transition-group';
 import './style.css';
 import { useEffect, useRef, useState } from 'react';
-import { StylesType } from 'types/styles';
+import { transitionStyles } from 'types/styles';
 
 interface ITodoProps {
 	todo: ITodo;
@@ -27,13 +27,6 @@ export const Todo = ({ todo, deleteTodo, toggleTodoComplete }: ITodoProps) => {
 		padding: '10px',
 		opacity: 1,
 		transition: 'opacity 1s ease-in-out',
-	};
-
-	const transitionStyles: StylesType = {
-		entering: { opacity: 0 },
-		entered: { opacity: 1 },
-		exiting: { opacity: 1 },
-		exited: { opacity: 0 },
 	};
 
 	function onCheckboxChange() {

@@ -7,7 +7,7 @@ import {
 	BuildOutlined,
 	DeleteOutlined,
 	HomeOutlined,
-	VideoCameraAddOutlined,
+	InfoCircleOutlined,
 } from '@ant-design/icons';
 
 const { Sider } = AntLayout;
@@ -40,10 +40,10 @@ export const Menu = () => {
 					<span>Погода</span>
 					<Link to="/weather" />
 				</AntdMenu.Item>
-				<AntdMenu.Item key="/films">
-					<VideoCameraAddOutlined />
-					<span>Фильмы</span>
-					<Link to="/films" />
+				<AntdMenu.Item key="/ipInfo">
+					<InfoCircleOutlined />
+					<span>Информация по IP</span>
+					<Link to="/ipInfo" />
 				</AntdMenu.Item>
 			</AntdMenu>
 		</Sider>
