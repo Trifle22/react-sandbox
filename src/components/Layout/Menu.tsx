@@ -6,6 +6,7 @@ import {
 	AntCloudOutlined,
 	BuildOutlined,
 	DeleteOutlined,
+	DotChartOutlined,
 	HomeOutlined,
 	InfoCircleOutlined,
 } from '@ant-design/icons';
@@ -44,6 +45,11 @@ export const Menu = () => {
 					<InfoCircleOutlined />
 					<span>Информация по IP</span>
 					<Link to="/ipInfo" />
+				</AntdMenu.Item>
+				<AntdMenu.Item key="/gsap">
+					<DotChartOutlined />
+					<span>GSAP</span>
+					<Link to="/gsap" />
 				</AntdMenu.Item>
 			</AntdMenu>
 		</Sider>

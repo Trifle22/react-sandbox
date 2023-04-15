@@ -4,6 +4,7 @@ import { Home } from 'components';
 import { AnimatedTodoList } from 'components/AnimatedTodoList';
 import { RealTimeWeather } from 'components/RealtimeWeather';
 import { IPInfo } from 'components/IPInfo';
+import { GSAPTests } from 'components/GSAPTests/GSAPTests';
 
 export const AppRouter = () => {
 	return (
@@ -12,6 +13,7 @@ export const AppRouter = () => {
 			<Route path="/animatedTodoList" element={<AnimatedTodoList />} />
 			<Route path="/weather" element={<RealTimeWeather />} />
 			<Route path="/ipInfo" element={<IPInfo />} />
+			<Route path="/gsap" element={<GSAPTests />} />
 		</Routes>
 	);
 };
